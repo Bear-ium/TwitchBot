@@ -5,10 +5,9 @@ Just a simple [twitch bot](https://twitch.tv/BeariumBot) developed by [Bears](ht
 ## Features
 
 ## Requirements
-
 Python 3.12
 
-|   Library     |   Version |
-|   :---        |   :----:  |
-|   Header      |   Title   |
-|   Paragraph   |   Text    |
+|   Library             |   Version |
+|   :-:                 |   :-:     |
+|   socket              |           |
+|   python-dotenv       |   1.1.0   |
