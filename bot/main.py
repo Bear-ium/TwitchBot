@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from Modules.Twitch import Send
+from Modules.Twitch import Send, GetUsername
 from Modules.Network import connect
 
 # === Load secrets from .env ===
@@ -26,6 +26,7 @@ while True:
         parts = response.split(":", 2)
         if len(parts) >= 3:
             message = parts[2].strip().lower()
+            #user = GetUsername(response)
 
             if message == "-hello":
                 Send(irc, CHANNEL, "Hello World!")

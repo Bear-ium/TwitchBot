@@ -7,6 +7,7 @@ Just a simple [twitch bot](https://twitch.tv/BeariumBot) developed by [Bears](ht
 ## Requirements
 Python 3.12
 
+### Twitch Bot
 |   Library             |   Version |
 |   :-:                 |   :-:     |
 |   socket              |           |
