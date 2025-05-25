@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
-from Modules.Twitch import Send, GetUsername
+from Modules.Twitch import GetUsername
 from Modules.Network import connect
+from Modules.Commands import CommandHandler
 
 # === Load secrets from .env ===
 load_dotenv()
@@ -25,14 +26,20 @@ while True:
     if "PRIVMSG" in response:
         parts = response.split(":", 2)
         if len(parts) >= 3:
-            message = parts[2].strip().lower()
+            full_message = parts[2].strip()
             user = GetUsername(response)
 
-            if message == "-hello":
-                Send(irc, CHANNEL, "Hello World!")
-            elif message == "-dan":
-                Send(irc, CHANNEL, "Dan is so hot!! You should follow him on twitch.tv/danmanplayz where he streams shirtless!")
-            elif message == "-umbral":
-                Send(irc, CHANNEL, "Umbral is such a cutie patootie!! You should follow him on twitch.tv/umbralaasimar cuz he is such a cutie patootie!")
-            elif message == "-user":
-                Send(irc, CHANNEL, f"{user}")
+            words = full_message.split()
+            # Skip empty message
+            if not words:
+                continue
+
+            # First word is the command
+            command = words[0].lower()
+            # The rest are arguments
+            args = words[1:]
+
+            kill = CommandHandler(irc, CHANNEL, (command, args, user))
+
+            if kill:
+                break
