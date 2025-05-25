@@ -8,4 +8,13 @@ def Send(irc, channel: str, msg: str):
 
     @return None
     """
-    print(f"🟢 Sending to {channel}: {msg}")
+    irc.send(f"PRIVMSG {channel} :{msg}\r\n".encode('utf-8'))
+
+def GetUsername(raw: str) -> str:
+    """
+    Extracts the sender's username from the raw IRC message.
+
+    @param raw (str): Raw IRC PRIVMSG string
+    @return username (str)
+    """
+    return raw.split("!", 1)[0][1:]
