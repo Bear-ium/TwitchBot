@@ -9,4 +9,3 @@ def Send(irc, channel: str, msg: str):
     @return None
     """
     print(f"🟢 Sending to {channel}: {msg}")
-    irc.send(f"PRIVMSG {channel} :{msg}\r\n".encode('utf-8'))

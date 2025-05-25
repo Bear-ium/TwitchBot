@@ -26,6 +26,7 @@ while True:
         parts = response.split(":", 2)
         if len(parts) >= 3:
             message = parts[2].strip().lower()
+
             if message == "-hello":
                 Send(irc, CHANNEL, "Hello World!")
             elif message == "-dan":
