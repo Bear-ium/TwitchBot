@@ -26,7 +26,7 @@ while True:
         parts = response.split(":", 2)
         if len(parts) >= 3:
             message = parts[2].strip().lower()
-            #user = GetUsername(response)
+            user = GetUsername(response)
 
             if message == "-hello":
                 Send(irc, CHANNEL, "Hello World!")
@@ -34,3 +34,5 @@ while True:
                 Send(irc, CHANNEL, "Dan is so hot!! You should follow him on twitch.tv/danmanplayz where he streams shirtless!")
             elif message == "-umbral":
                 Send(irc, CHANNEL, "Umbral is such a cutie patootie!! You should follow him on twitch.tv/umbralaasimar cuz he is such a cutie patootie!")
+            elif message == "-user":
+                Send(irc, CHANNEL, f"{user}")
