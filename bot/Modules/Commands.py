@@ -29,7 +29,7 @@ def CommandHandler(irc, CHANNEL, info: tuple):
     elif command in ("-coinflip", "-cf"):
         Send(irc, CHANNEL, f"Your coin landed on {coin_flip()}")
     elif command == "-roulette":
-        Send(irc, CHANNEL, roulette(args[0], 50))
+        Send(irc, CHANNEL, roulette(args[0]))
 
 
 

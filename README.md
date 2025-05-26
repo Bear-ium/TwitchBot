@@ -11,6 +11,8 @@ Python 3.12
 |   Library             |   Version |
 |   :-:                 |   :-:     |
 |   socket              |:heavy_check_mark:|
+|   sqlite3             |:heavy_check_mark:|
+|   os                  |:heavy_check_mark:|
 |   python-dotenv       |   1.1.0   |
 
 ### Auth App
